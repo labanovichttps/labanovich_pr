@@ -20,15 +20,18 @@ public class DeleteEmployeeController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        String id = request.getParameter("deleteUser");
         boolean isDeleted = employeeService.deleteById(id);
         if (isDeleted) {
             List<Employee> employees = employeeService.getAll();
             request.setAttribute("employees", employees);
-            request.getRequestDispatcher("/")
+            request.setAttribute("message", "DELETED");
+            request.getRequestDispatcher("/users.jsp")
                     .forward(request, response);
         } else {
             request.setAttribute("message", "USER NOT FOUND");
+            request.getRequestDispatcher("/users.jsp")
+                    .forward(request, response);
         }
     }
 

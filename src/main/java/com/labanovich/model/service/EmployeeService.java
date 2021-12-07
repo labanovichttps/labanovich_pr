@@ -23,4 +23,8 @@ public class EmployeeService {
         return employeeDAO.editById(eId, name, surname, position, number);
     }
 
+    public boolean add(String name, String surname, String position, String number){
+        return employeeDAO.add(name, surname, position, number);
+    }
+
 }

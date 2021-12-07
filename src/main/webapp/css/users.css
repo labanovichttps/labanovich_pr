@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background: #383838;
+}
+
+body {
+    background: #E8E8E8;
+    font-family: 'Roboto';
+}
+
+#a{
+    color: #fff;
+    text-decoration: none;
+}
+
+#a:hover {
+    text-decoration: none;
+}
+
+
+
+.main {
+    margin-top: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+/* Украденная таблица */
+
+.table {
+	width: 93%;
+	border: none;
+	border-collapse: collapse;
+}
+.table thead th {
+	font-weight: bold;
+	text-align: center;
+	padding: 10px 15px;
+	background: #FEB5C0;
+	font-size: 14px;
+}
+
+.table thead tr th:first-child {
+	border-radius: 20px 0 0 0;
+}
+.table thead tr th:last-child {
+	border-radius: 0 20px 0 0;
+}
+
+.table tbody td:last-child{
+    width: 6%;
+}
+
+.table tbody td + td + td + td + td + td{
+    width: 6%;
+}
+
+.table tbody td + td + td + td + td + td + td{
+    width: 6%;
+}
+
+
+.table tbody td {
+	text-align: center;
+	border: none;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;    
+    background: #fff;
+}   
+
+.button-delete {
+    width: 120px;
+    height: 22px;
+    border: 1px solid #E44747;
+    color: #E44747;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 10px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.button-delete:hover {
+    background-color: #E44747;   
+    color: #fff;
+    transition-duration: 0.2s;
+}
+
+
+.button-change {
+    width: 120px;
+    height: 22px;
+    border: 1px solid #9b8b8d;
+    color: #9b8b8d;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 10px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+
+}
+
+.button-change:hover {
+    background-color: #9b8b8d;   
+    color: #fff;
+    transition-duration: 0.2s;
+}
+
+
+
+/* Выпадающий выбор дауна */
+
+.table-dropbtn {
+    width: 120px;
+    height: 22px;
+    background-color: #fff;
+    border: 1px solid #5312DE;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #5312DE;
+    cursor: pointer;
+}
+
+.table-dropdown {
+    position: relative;
+    display: inline;
+    justify-items: end;
+}
+
+.table-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    border: 1px solid #5312DE;
+    box-sizing: border-box;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.table-dropdown-content a {
+    color: black;
+    padding: 5px 0;
+    text-decoration: none;
+    display: block;
+    align-items: center;
+}
+
+.table-dropdown-content a:hover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none !important;
+    color: #5312DE;
+}
+
+.table-dropdown:hover .table-dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 200;
+	font-size: 14px;
+}
+
+.table-dropdown:hover .table-dropbtn {
+    /* width: 240px; */
+    border-bottom: 0;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: #5312DE;
+    color: #fff;
+}

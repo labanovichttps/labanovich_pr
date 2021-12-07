@@ -29,6 +29,11 @@ public class SQLRequests {
             where id = ?;
             """;
 
+    public static final String ADD_EMPLOYEE = """
+            insert into employee (name, surname, position, phone_number)
+            values (?, ?, ?, ?);
+            """;
+
     public static final String DELETE_SURRENDER_TECHNIC = """
             delete
             from surrender_technic

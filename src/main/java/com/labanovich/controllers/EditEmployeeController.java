@@ -21,7 +21,15 @@ public class EditEmployeeController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        int editUser = Integer.parseInt(request.getParameter("editUser"));
+        List<Employee> all = employeeService.getAll();
+        Employee employee = all.stream()
+                .filter(e -> e.getId() == editUser)
+                .findFirst()
+                .get();
+        request.setAttribute("employee", employee);
+        request.getRequestDispatcher("/changingUsers.jsp")
+                .forward(request, response);
     }
 
     @Override

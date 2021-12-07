@@ -1,24 +1,38 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: tsimafeilabanovich
-  Date: 2.12.21
-  Time: 17:02
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Вся техника</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href='css/main.css'>
+    <title>Document</title>
 </head>
 <body>
-<c:import url="/all_technic"/>
+    <jsp:include page="templates/header.jsp"/>
 
-<c:set var="technics" value="${requestScope.technics}"/>
+    <div class="main">
 
-<h1>List of products from servlet</h1>
-<c:forEach var="technic" items="${technics}" varStatus="i">
-    ${technic}<br>
-</c:forEach>
+      <div class="left">
+          <div class="left-name">Техника - наше будущее</div>
+          <div class="left-text">
+                Если вам необходим мощный компьютер
+                напрокат для работы в 3ds Max или AutoCad.
+                С помощью компьютера вы сможете
+                подключиться к интернету для работы
+                в облачных сервисах, поиска информации,
+                общения, получения почты. А также, на них
+                можно запустить последние версии таких 
+                онлайн игр, как World of Tanks, DotA,
+                War Thunder и другие. В зависимости от
+                поставленных задач мы подберем вам
+                оптимальную конфигурацию и лицензионную 
+                операционную систему.
+            </div>
+      </div> 
+      <div class="right"><img src="img/Hot.png" alt=""></div>
+    </div>
+
 </body>
 </html>
