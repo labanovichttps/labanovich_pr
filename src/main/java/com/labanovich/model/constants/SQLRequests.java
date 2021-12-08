@@ -1,6 +1,5 @@
 package com.labanovich.model.constants;
 
-import java.awt.*;
 
 public class SQLRequests {
     public static final String GET_ALL_TECHNIC = """

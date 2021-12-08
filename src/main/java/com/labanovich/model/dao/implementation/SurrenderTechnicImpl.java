@@ -76,7 +76,7 @@ public class SurrenderTechnicImpl implements SurrenderTechnicDAO {
         try (var connection = ConnectionManager.open();
              var ps = connection.prepareStatement(SQLRequests.EDIT_SURRENDER_TECHNIC_DATE)) {
             ps.setDate(1, receiveDate);
-            ps.setInt(1, id);
+            ps.setInt(2, id);
             int i = ps.executeUpdate();
             isEdited = i == 1;
         } catch (SQLException e) {

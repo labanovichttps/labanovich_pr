@@ -5,9 +5,6 @@ import com.labanovich.model.dao.interfaces.EmployeeDAO;
 import com.labanovich.model.db.ConnectionManager;
 import com.labanovich.model.entities.Employee;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;

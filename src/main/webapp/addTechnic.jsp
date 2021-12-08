@@ -24,12 +24,12 @@
 
             <div class="unit">
                 <div class="unit-text">Название</div>
-                <input type="text" name="tname" required>
+                <input type="text" name="tname" pattern="[A-Za-z]{3,30}" required>
             </div>
 
             <div class="unit">
                 <div class="unit-text">Производитель</div>
-                <input type="text" name="tproducer" required>
+                <input type="text" pattern="[A-Za-z]{3,30}" name="tproducer" required>
             </div>
 
             <div class="unit">
@@ -44,7 +44,7 @@
 
             <div class="unit">
                 <div class="unit-text">Цена</div>
-                <input type="text" name="tcost" required>
+                <input pattern="\d+(\.\d{2})?" type="text" name="tcost" required>
             </div>
 
             <button class="button" type="submit">Добавить</button>

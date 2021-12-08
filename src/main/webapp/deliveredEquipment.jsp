@@ -32,8 +32,8 @@
         <thead>
         <tr>
             <th>ID сданной техники</th>
-            <th>ID пользователя</th>
-            <th>ID техники</th>
+            <th>Пользователь</th>
+            <th>Техника</th>
             <th>Дата сдачи</th>
             <th>Дата возврата</th>
             <th colspan="2">Действия</th>
@@ -58,13 +58,16 @@
                     </td>
                     <td>${tech.surrenderDate}</td>
                     <td>${tech.receiveDate}</td>
-                    <form action="<c:url value="/receive_surrender_technic"/>" method="get">
+                    <c:if test="${empty tech.receiveDate}">
+                        <form action="<c:url value="/receive_surrender_technic"/>" method="get">
+                            <td>
+                                <button class="button-back" value="${tech.id}" onclick="return confirm('Are you sure you want to receive technic?')" name="reciveTs">Вернуть</button>
+                            </td>
+                        </form>
+                    </c:if>
+                    <form action="<c:url value="/EditSurrenderTechnicController"/>" method="get">
                         <td>
-                            <button class="button-back" value="${tech.id}" name="reciveTs">Вернуть</button>
-                        </td>
-                    </form>
-                    <form action="<c:url value="/EditSurrenderTechnicController"/>" method="post">
-                        <td>
+                            <input type="hidden" value="${tech.receiveDate}" name="tempDate">
                             <button class="button-detail" value="${tech.id}" name="editTs">Изменить</button>
                         </td>
                     </form>

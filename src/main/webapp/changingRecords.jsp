@@ -22,16 +22,19 @@
                 Изменение записи
             </h1>
 
-            <div class="container-fields">
+            <form action="<c:url value="/EditSurrenderTechnicController"/>" method="post">
+                <div class="container-fields">
 
-                <div class="container-field">
-                    <div class="field-text">Дата</div>
-                    <input class="input" type="date" maxlength="50" required>
+                    <div class="container-field">
+                        <div class="field-text">Дата</div>
+                        <input class="input" type="date" value="${tempDate}" maxlength="50" name="dateForEdit" required>
+                    </div>
+
+                    <button type="submit" name="editTsq" onclick="alert('TECHNIC CHANGED')" value="${editTs}" class="button">Изменить</button>
+
                 </div>
+            </form>
 
-                <button type="submit" class="button">Изменить</button>
-
-            </div>
 
         </div>
     </div>

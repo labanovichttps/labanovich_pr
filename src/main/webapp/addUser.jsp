@@ -24,22 +24,22 @@
 
             <div class="unit">
                 <div class="unit-text">Имя</div>
-                <input type="text" name="eAddName" required>
+                <input type="text" name="eAddName" pattern="[A-Za-z]{3,30}" required>
             </div>
 
             <div class="unit">
                 <div class="unit-text">Фамилия</div>
-                <input type="text" name="eAddSurname" required>
+                <input type="text" name="eAddSurname" pattern="[A-Za-z]{3,30}" required>
             </div>
 
             <div class="unit">
                 <div class="unit-text">Должность</div>
-                <input type="text" name="eAddPosition" required>
+                <input type="text" name="eAddPosition" pattern="[A-Za-z]{3,30}" required>
             </div>
 
             <div class="unit">
                 <div class="unit-text">Номер телефона</div>
-                <input type="text" name="eAddPn" required>
+                <input type="text" name="eAddPn" pattern="80[0-9]{2}[0-9]{7}" required>
             </div>
 
             <button class="button" type="submit">Добавить</button>

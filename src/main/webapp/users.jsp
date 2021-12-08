@@ -51,7 +51,7 @@
                 </form>
                 <form action="<c:url value="/delete_employee"/>">
                     <td>
-                        <button class="button-delete" value="${employee.id}" name="deleteUser">Удалить</button>
+                        <button onclick="alert('YOU DELETE USER')" class="button-delete" value="${employee.id}" name="deleteUser">Удалить</button>
                     </td>
                 </form>
             </tr>

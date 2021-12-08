@@ -35,7 +35,7 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="button">Изменить</button>
+                    <button type="submit" class="button">Сдать</button>
 
                 </div>
             </form>

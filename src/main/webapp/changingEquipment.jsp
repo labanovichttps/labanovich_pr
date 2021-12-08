@@ -28,12 +28,12 @@
 
             <div class="container-field">
                 <div class="field-text">Название техники</div>
-                <input class="input" value="${technic.name}" name="nameEdit" type="text" maxlength="50" required>
+                <input class="input" value="${technic.name}" pattern="[A-Za-z]{3,30}" name="nameEdit"  type="text" maxlength="50" required>
             </div>
 
             <div class="container-field">
                 <div class="field-text">Производитель</div>
-                <input class="input" value="${technic.producer}" name="producerEdit" type="text" maxlength="50" required>
+                <input class="input" value="${technic.producer}" pattern="[A-Za-z]{3,30}" name="producerEdit" type="text" maxlength="50" required>
             </div>
 
             <div class="container-field">
@@ -50,10 +50,10 @@
 
             <div class="container-field">
                 <div class="field-text">Стоимость</div>
-                <input class="input" value="${technic.cost}" name="costEdit" type="text" maxlength="50" required>
+                <input class="input" pattern="\d+(\.\d{2})?" value="${technic.cost}" name="costEdit" type="text" maxlength="50" required>
             </div>
 
-            <button type="submit" value="${technic.id}" name="idEdit" class="button">Изменить</button>
+            <button type="submit" value="${technic.id}" onclick="alert('TECHNIC CHANGED')" name="idEdit" class="button">Изменить</button>
             </div>
         </form>
 

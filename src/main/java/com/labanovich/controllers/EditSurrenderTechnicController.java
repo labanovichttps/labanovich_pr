@@ -20,20 +20,23 @@ public class EditSurrenderTechnicController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        HttpSession session = request.getSession();
+        String editTsq = request.getParameter("editTs");
+        request.setAttribute("tempDate", request.getParameter("tempDate"));
+        session.setAttribute("editTsq11", editTsq);
+        request.getRequestDispatcher("/changingRecords.jsp")
+                .forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
-        String date = request.getParameter("date");
-
+        String id = (String) request.getSession().getAttribute("editTsq11");
+        String date = request.getParameter("dateForEdit");
         boolean isEdited = surrenderTechnicService.editById(id, date);
-
         if (isEdited) {
             List<SurrenderTechnic> surrenderTechnics = surrenderTechnicService.getAll();
             request.setAttribute("surrender_technic", surrenderTechnics);
-            request.getRequestDispatcher("/")
+            request.getRequestDispatcher("/deliveredEquipment.jsp")
                     .forward(request, response);
         } else {
             request.setAttribute("message", "TECHNIC NOT FOUND");

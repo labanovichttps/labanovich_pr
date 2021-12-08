@@ -29,25 +29,25 @@
 
                 <div class="container-field">
                     <div class="field-text">Имя</div>
-                    <input class="input" value="${employee.name}" name="name" type="text" maxlength="50" required>
+                    <input class="input" value="${employee.name}" name="name" type="text" pattern="[A-Za-z]{3,30}" maxlength="50" required>
                 </div>
 
                 <div class="container-field">
                     <div class="field-text">Фамилия</div>
-                    <input class="input" value="${employee.surname}" name="surname" type="text" maxlength="50" required>
+                    <input class="input" value="${employee.surname}" name="surname" type="text" pattern="[A-Za-z]{3,30}" maxlength="50" required>
                 </div>
 
                 <div class="container-field">
                     <div class="field-text">Должность</div>
-                    <input class="input" value="${employee.position}" name="position" type="text" maxlength="50" required>
+                    <input class="input" value="${employee.position}" name="position" type="text" pattern="[A-Za-z]{3,30}" maxlength="50" required>
                 </div>
 
                 <div class="container-field">
                     <div class="field-text">Номер телефона</div>
-                    <input class="input" value="${employee.phoneNumber}" name="phone_number" type="text" maxlength="50" required>
+                    <input class="input" value="${employee.phoneNumber}" name="phone_number" pattern="80[0-9]{2}[0-9]{7}" type="text" maxlength="50" required>
                 </div>
 
-                <button value="${employee.id}" name="id" type="submit" class="button">Изменить</button>
+                <button value="${employee.id}" onclick="alert('USER CHANGED')" name="id" type="submit" class="button">Изменить</button>
 
             </div>
 

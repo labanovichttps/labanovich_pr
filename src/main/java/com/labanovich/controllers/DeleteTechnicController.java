@@ -30,6 +30,8 @@ public class DeleteTechnicController extends HttpServlet {
                     .forward(request, response);
         } else {
             request.setAttribute("message", "TECHNIC NOT FOUND");
+            request.getRequestDispatcher("/equipment.jsp")
+                    .forward(request, response);
         }
     }
 
