@@ -25,11 +25,12 @@ public class ReceiveSurrenderTechnicController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        String id = request.getParameter("reciveTs");
         boolean isReceived = surrenderTechnicService.receive(id);
         if (isReceived) {
             List<SurrenderTechnic> surrenderTechnics = surrenderTechnicService.getAll();
             request.setAttribute("surrender_technic", surrenderTechnics);
+            request.setAttribute("message", "TECHNIC RECEIVED");
             request.getRequestDispatcher("/")
                     .forward(request, response);
         } else {

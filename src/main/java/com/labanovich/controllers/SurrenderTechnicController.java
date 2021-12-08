@@ -21,7 +21,8 @@ public class SurrenderTechnicController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<SurrenderTechnic> surrender_technic = surrenderTechnicService.getAll();
-        request.setAttribute("surrender_technic", surrender_technic);
+        System.out.println(surrender_technic);
+        request.setAttribute("surrender_technicQ", surrender_technic);
     }
 
     @Override

@@ -14,46 +14,68 @@
 
 <jsp:include page="templates/header.jsp"/>
 
+<c:import url="/surrender_technic"/>
 
+<c:set var="sdTech" value="${requestScope.surrender_technicQ}"/>
+
+<c:import url="/all_employees"/>
+
+<c:set var="employees" value="${requestScope.employees}"/>
+
+<c:import url="/all_technic"/>
+
+<c:set var="technics" value="${requestScope.technics}"/>
 <div class="main">
 
-        <table class="table">
+    <table class="table">
 
-            <thead>
+        <thead>
+        <tr>
+            <th>ID сданной техники</th>
+            <th>ID пользователя</th>
+            <th>ID техники</th>
+            <th>Дата сдачи</th>
+            <th>Дата возврата</th>
+            <th colspan="2">Действия</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <c:forEach items="${sdTech}" var="tech">
                 <tr>
-                    <th>№</th>
-                    <th>Название техники</th>
-                    <th>Производитель</th>
-                    <th>Дата производства</th>
-                    <th>Цена, $</th>
-                    <th colspan="2">Действия</th>
-                </tr>
-            </thead>
+                    <td>${tech.id}</td>
+                    <td>
+                            ${employees.stream()
+                                    .filter(empl-> empl.getId() == tech.userId)
+                                    .findFirst()
+                                    .get()}
 
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Macbook 1</td>
-                    <td>Apple</td>
-                    <td>01/01/2001</td>
-                    <td>1000</td>
-                    <td><button class="button-back">Вернуть</button></td>
-                    <td><a href="changingRecords.jsp"><button class="button-detail">Изменить</button></a></td>
+                    </td>
+                    <td>${technics.stream()
+                            .filter(technics -> technics.getId() == tech.technicId)
+                            .findFirst()
+                            .get()}
+                    </td>
+                    <td>${tech.surrenderDate}</td>
+                    <td>${tech.receiveDate}</td>
+                    <form action="<c:url value="/receive_surrender_technic"/>" method="get">
+                        <td>
+                            <button class="button-back" value="${tech.id}" name="reciveTs">Вернуть</button>
+                        </td>
+                    </form>
+                    <form action="<c:url value="/EditSurrenderTechnicController"/>" method="post">
+                        <td>
+                            <button class="button-detail" value="${tech.id}" name="editTs">Изменить</button>
+                        </td>
+                    </form>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Macbook 1</td>
-                    <td>Apple</td>
-                    <td>01/01/2001</td>
-                    <td>1000</td>
-                    <td><button class="button-back">Вернуть</button></td>
-                    <td><a href="changingRecords.jsp"><button class="button-detail">Изменить</button></a></td>
-                </tr>
-            </tbody>
+            </c:forEach>
 
-        </table>
+        </tbody>
 
-    </div>
+    </table>
+
+</div>
 
 </body>
 </html>

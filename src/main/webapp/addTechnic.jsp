@@ -18,36 +18,36 @@
 
     <div class="add-list-container">
 
-        <div class="container-name">Добавление записи</div>
+        <div class="container-name">Добавление техники</div>
 
-        <form action="#">
+        <form action="<c:url value="/add_technic"/>" method="get">
 
             <div class="unit">
-                <div class="unit-text">Text</div>
-                <input type="text">
+                <div class="unit-text">Название</div>
+                <input type="text" name="tname" required>
             </div>
 
             <div class="unit">
-                <div class="unit-text">Text</div>
-                <input type="text">
+                <div class="unit-text">Производитель</div>
+                <input type="text" name="tproducer" required>
             </div>
 
             <div class="unit">
-                <div class="unit-text">Text</div>
-                <input type="text">
+                <div class="unit-text">Дата производства</div>
+                <input type="date" name="tproduceDate" required>
             </div>
 
             <div class="unit">
-                <div class="unit-text">Text</div>
-                <input type="text">
+                <div class="unit-text">Срок гарантии</div>
+                <input type="date" name="tserviceDate" required>
             </div>
 
             <div class="unit">
-                <div class="unit-text">Text</div>
-                <input type="text">
+                <div class="unit-text">Цена</div>
+                <input type="text" name="tcost" required>
             </div>
 
-            <button class="button">Добавить</button>
+            <button class="button" type="submit">Добавить</button>
 
         </form>
 

@@ -22,6 +22,8 @@ public class TechnicController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Technic> technics = technicService.getAll();
         request.setAttribute("technics", technics);
+
+
     }
 
     @Override

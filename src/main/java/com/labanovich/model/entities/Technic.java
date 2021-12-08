@@ -18,4 +18,14 @@ public class Technic {
     private Date produceDate;
     private Date service_date;
     private double cost;
+    private String status;
+
+    public Technic(int id, String name, String producer, Date produceDate, Date service_date, double cost) {
+        this.id = id;
+        this.name = name;
+        this.producer = producer;
+        this.produceDate = produceDate;
+        this.service_date = service_date;
+        this.cost = cost;
+    }
 }

@@ -28,29 +28,29 @@
 
             <div class="container-field">
                 <div class="field-text">Название техники</div>
-                <input class="input" value="${technic.name}" name="nameEdit" type="text" maxlength="50">
+                <input class="input" value="${technic.name}" name="nameEdit" type="text" maxlength="50" required>
             </div>
 
             <div class="container-field">
                 <div class="field-text">Производитель</div>
-                <input class="input" value="${technic.producer}" name="producerEdit" type="text" maxlength="50">
+                <input class="input" value="${technic.producer}" name="producerEdit" type="text" maxlength="50" required>
             </div>
 
             <div class="container-field">
                 <div class="field-text">Дата производства</div>
-                <input class="input" value="${technic.produceDate}" name="producerDateEdit" type="text"
+                <input class="input" value="${technic.produceDate}" name="producerDateEdit" type="date" required
                        maxlength="50">
             </div>
 
             <div class="container-field">
                 <div class="field-text">Срок гарантии</div>
-                <input class="input" value="${technic.service_date}" name="serviceDateEdit" type="text"
+                <input class="input" value="${technic.service_date}" name="serviceDateEdit" type="date" required
                        maxlength="50">
             </div>
 
             <div class="container-field">
                 <div class="field-text">Стоимость</div>
-                <input class="input" value="${technic.cost}" name="costEdit" type="text" maxlength="50">
+                <input class="input" value="${technic.cost}" name="costEdit" type="text" maxlength="50" required>
             </div>
 
             <button type="submit" value="${technic.id}" name="idEdit" class="button">Изменить</button>

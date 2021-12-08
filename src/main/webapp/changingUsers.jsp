@@ -29,22 +29,22 @@
 
                 <div class="container-field">
                     <div class="field-text">Имя</div>
-                    <input class="input" value="${employee.name}" name="name" type="text" maxlength="50">
+                    <input class="input" value="${employee.name}" name="name" type="text" maxlength="50" required>
                 </div>
 
                 <div class="container-field">
                     <div class="field-text">Фамилия</div>
-                    <input class="input" value="${employee.surname}" name="surname" type="text" maxlength="50">
+                    <input class="input" value="${employee.surname}" name="surname" type="text" maxlength="50" required>
                 </div>
 
                 <div class="container-field">
                     <div class="field-text">Должность</div>
-                    <input class="input" value="${employee.position}" name="position" type="text" maxlength="50">
+                    <input class="input" value="${employee.position}" name="position" type="text" maxlength="50" required>
                 </div>
 
                 <div class="container-field">
                     <div class="field-text">Номер телефона</div>
-                    <input class="input" value="${employee.phoneNumber}" name="phone_number" type="text" maxlength="50">
+                    <input class="input" value="${employee.phoneNumber}" name="phone_number" type="text" maxlength="50" required>
                 </div>
 
                 <button value="${employee.id}" name="id" type="submit" class="button">Изменить</button>

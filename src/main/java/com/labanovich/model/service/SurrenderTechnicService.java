@@ -1,13 +1,14 @@
 package com.labanovich.model.service;
 
 import com.labanovich.model.dao.implementation.SurrenderTechnicImpl;
+import com.labanovich.model.dao.interfaces.SurrenderTechnicDAO;
 import com.labanovich.model.entities.SurrenderTechnic;
 
 import java.sql.Date;
 import java.util.List;
 
 public class SurrenderTechnicService {
-    private SurrenderTechnicImpl surrenderTechnic;
+    private SurrenderTechnicDAO surrenderTechnic = new SurrenderTechnicImpl();
 
     public List<SurrenderTechnic> getAll() {
         return surrenderTechnic.getAll();

@@ -26,7 +26,7 @@
 
                 <div class="container-field">
                     <div class="field-text">Дата</div>
-                    <input class="input" type="date" maxlength="50">
+                    <input class="input" type="date" maxlength="50" required>
                 </div>
 
                 <button type="submit" class="button">Изменить</button>

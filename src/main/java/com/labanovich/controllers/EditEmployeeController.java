@@ -43,7 +43,7 @@ public class EditEmployeeController extends HttpServlet {
         if (isEdited) {
             List<Employee> employees = employeeService.getAll();
             request.setAttribute("employees", employees);
-            request.getRequestDispatcher("/")
+            request.getRequestDispatcher("/users.jsp")
                     .forward(request, response);
         } else {
             request.setAttribute("message", "USER NOT FOUND");

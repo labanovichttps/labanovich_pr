@@ -11,4 +11,6 @@ public interface TechnicDAO {
     boolean add(String name, String producer, Date produceDate,
                 Date serviceDate, double cost);
     boolean removeById(int id);
+    boolean addInSurrenderTechnic(int userId, int technicId);
+
 }

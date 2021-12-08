@@ -17,6 +17,11 @@
 <c:import url="/all_technic"/>
 
 <c:set var="technics" value="${requestScope.technics}"/>
+
+<c:import url="/all_employees"/>
+
+<c:set var="employees" value="${requestScope.employees}"/>
+
 <c:if test="${not empty message}">
     <p style="color: #F88092">${message}</p>
 </c:if>
@@ -44,14 +49,13 @@
                 <td>${technic.produceDate}</td>
                 <td>${technic.cost}$</td>
                 <td>
-                    <div class="table-dropdown">
-                        <button class="table-dropbtn">Сдать</button>
-                        <div class="table-dropdown-content">
-                            <a href="#">login</a>
-                            <a href="#">login</a>
-                            <a href="#">login</a>
-                        </div>
-                    </div>
+                    <c:if test="${technic.status.startsWith('Н')}">
+                        <form action="<c:url value="/add_in_st"/>" method="get">
+                            <div class="table-dropdown">
+                                <button class="table-dropbtn" name="rcID" value="${technic.id}">Сдать</button>
+                            </div>
+                        </form>
+                    </c:if>
                 </td>
                 <form action="<c:url value="/edit_technic"/>" method="get">
                     <td>

@@ -20,17 +20,18 @@ public class AddTechnicController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("name");
-        String producer = request.getParameter("producer");
-        String produceDate = request.getParameter("produceDate");
-        String serviceDate = request.getParameter("serviceDate");
-        String cost = request.getParameter("cost");
+        String name = request.getParameter("tname");
+        String producer = request.getParameter("tproducer");
+        String produceDate = request.getParameter("tproduceDate");
+        String serviceDate = request.getParameter("tserviceDate");
+        String cost = request.getParameter("tcost");
 
         boolean isAdded = technicService.add(name, producer, produceDate, serviceDate, cost);
         if (isAdded) {
             List<Technic> technics = technicService.getAll();
             request.setAttribute("technics", technics);
-            request.getRequestDispatcher("/")
+            request.setAttribute("message", "TECHNIC ADDED");
+            request.getRequestDispatcher("/equipment.jsp")
                     .forward(request, response);
         } else {
             request.setAttribute("message", "TECHNIC NOT FOUND");

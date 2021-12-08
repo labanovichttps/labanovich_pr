@@ -24,7 +24,8 @@ public class TechnicDAOImpl implements TechnicDAO {
                 Date produce_date = rs.getDate("produce_date");
                 Date service_date = rs.getDate("service_date");
                 double cost = rs.getDouble("cost");
-                Technic technic = new Technic(id, name, producer, produce_date, service_date, cost);
+                String isSurrender = rs.getString("isSurrender");
+                Technic technic = new Technic(id, name, producer, produce_date, service_date, cost, isSurrender);
                 technics.add(technic);
             }
         } catch (SQLException throwables) {
@@ -83,5 +84,22 @@ public class TechnicDAOImpl implements TechnicDAO {
             e.printStackTrace();
         }
         return isRemoved;
+    }
+
+    @Override
+    public boolean addInSurrenderTechnic(int userId, int technicId) {
+        boolean isAdded = false;
+        try (var connection = ConnectionManager.open();
+             var ps = connection.prepareStatement(SQLRequests.ADD_IN_ST);
+             var ps1 = connection.prepareStatement(SQLRequests.CUM1)) {
+            ps.setInt(1, userId);
+            ps.setInt(2, technicId);
+            ps1.setInt(1, technicId);
+            ps1.executeUpdate();
+            isAdded = ps.executeUpdate() == 1;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return isAdded;
     }
 }

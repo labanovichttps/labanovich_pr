@@ -35,5 +35,11 @@ public class TechnicService {
         return technicDAO.removeById(tId);
     }
 
+    public boolean addInSurrenderTechnic(String userId, String technicId){
+        int uId = Integer.parseInt(userId);
+        int tId = Integer.parseInt(technicId);
+        return technicDAO.addInSurrenderTechnic(uId, tId);
+    }
+
 
 }

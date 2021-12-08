@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SurrenderTechnicImpl implements SurrenderTechnicDAO {
+
     @Override
     public List<SurrenderTechnic> getAll() {
         List<SurrenderTechnic> surrenderTechnics = new ArrayList<>();
@@ -35,8 +36,18 @@ public class SurrenderTechnicImpl implements SurrenderTechnicDAO {
     public boolean receiveById(int id) {
         boolean isReceived = false;
         try (var connection = ConnectionManager.open();
-             var ps = connection.prepareStatement(SQLRequests.RECEIVE_SURRENDER_TECHNIC)) {
+             var ps = connection.prepareStatement(SQLRequests.RECEIVE_SURRENDER_TECHNIC);
+             var ps1 = connection.prepareStatement(SQLRequests.CUM);
+             var ps420 = connection.prepareStatement(SQLRequests.RETURN_BACK)) {
+            ps.setInt(1, id);
+            ps1.setInt(1, id);
             int i = ps.executeUpdate();
+            var rs = ps1.executeQuery();
+            if (rs.next()) {
+                int technic_id = rs.getInt("technic_id");
+                ps420.setInt(1, technic_id);
+            }
+            ps420.executeUpdate();
             isReceived = i == 1;
         } catch (SQLException e) {
             e.printStackTrace();
