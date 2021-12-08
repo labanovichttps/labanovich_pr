@@ -38,7 +38,12 @@ public class TechnicDAOImpl implements TechnicDAO {
         boolean isEdited = false;
         try (var connection = ConnectionManager.open();
              var ps = connection.prepareStatement(SQLRequests.EDIT_TECHNIC_BY_ID)) {
-            ps.setInt(1, id);
+            ps.setString(1, name);
+            ps.setString(2, producer);
+            ps.setDate(3, produceDate);
+            ps.setDate(4, serviceDate);
+            ps.setDouble(5, cost);
+            ps.setInt(6, id);
             int i = ps.executeUpdate();
             isEdited = i == 1;
         } catch (SQLException throwables) {
@@ -70,7 +75,8 @@ public class TechnicDAOImpl implements TechnicDAO {
     public boolean removeById(int id) {
         boolean isRemoved = false;
         try (var connection = ConnectionManager.open();
-             var ps = connection.prepareStatement(SQLRequests.ADD_TECHNIC)) {
+             var ps = connection.prepareStatement(SQLRequests.DELETE_TECHNIC_BY_ID)) {
+            ps.setInt(1, id);
             int i = ps.executeUpdate();
             isRemoved = i == 1;
         } catch (SQLException e) {

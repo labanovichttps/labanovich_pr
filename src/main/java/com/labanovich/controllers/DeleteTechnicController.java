@@ -20,12 +20,13 @@ public class DeleteTechnicController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        String id = request.getParameter("technicDelete");
         boolean isRemoved = technicService.remove(id);
         if (isRemoved) {
             List<Technic> technics = technicService.getAll();
+            request.setAttribute("message", "TECHNIC DELETED");
             request.setAttribute("technics", technics);
-            request.getRequestDispatcher("/")
+            request.getRequestDispatcher("/equipment.jsp")
                     .forward(request, response);
         } else {
             request.setAttribute("message", "TECHNIC NOT FOUND");

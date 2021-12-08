@@ -1,5 +1,6 @@
 package com.labanovich.controllers;
 
+import com.labanovich.model.entities.Employee;
 import com.labanovich.model.entities.SurrenderTechnic;
 import com.labanovich.model.entities.Technic;
 import com.labanovich.model.service.TechnicService;
@@ -21,22 +22,32 @@ public class EditTechnicController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        int id =  Integer.parseInt(request.getParameter("technicEdit"));
+        List<Technic> all = technicService.getAll();
+        Technic technic = all.stream()
+                .filter(t -> t.getId() == id)
+                .findFirst()
+                .get();
+        request.setAttribute("technic", technic);
+        request.getRequestDispatcher("/changingEquipment.jsp")
+                .forward(request, response);
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
-        String name = request.getParameter("name");
-        String producer = request.getParameter("producer");
-        String produceDate = request.getParameter("produceDate");
-        String serviceDate = request.getParameter("serviceDate");
-        String cost = request.getParameter("cost");
+        String id = request.getParameter("idEdit");
+        String name = request.getParameter("nameEdit");
+        String producer = request.getParameter("producerEdit");
+        String produceDate = request.getParameter("producerDateEdit");
+        String serviceDate = request.getParameter("serviceDateEdit");
+        String cost = request.getParameter("costEdit");
         boolean isEdited = technicService.edit(id, name , producer, produceDate,serviceDate, cost);
         if (isEdited) {
             List<Technic> technics = technicService.getAll();
+            request.setAttribute("message", "TECHNIC EDITED");
             request.setAttribute("technics", technics);
-            request.getRequestDispatcher("/")
+            request.getRequestDispatcher("/equipment.jsp")
                     .forward(request, response);
         } else {
             request.setAttribute("message", "TECHNIC NOT FOUND");

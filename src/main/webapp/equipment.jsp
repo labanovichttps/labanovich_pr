@@ -17,7 +17,9 @@
 <c:import url="/all_technic"/>
 
 <c:set var="technics" value="${requestScope.technics}"/>
-
+<c:if test="${not empty message}">
+    <p style="color: #F88092">${message}</p>
+</c:if>
 <div class="main">
 
     <table class="table">
@@ -51,12 +53,18 @@
                         </div>
                     </div>
                 </td>
-                <td><a href="changingEquipment.jsp">
-                    <button class="button-change">Изменить</button>
-                </a></td>
-                <td>
-                    <button class="button-delete">Удалить</button>
-                </td>
+                <form action="<c:url value="/edit_technic"/>" method="get">
+                    <td>
+                        <button class="button-change" type="submit" name="technicEdit" value="${technic.id}">Изменить
+                        </button>
+                    </td>
+                </form>
+                <form action="<c:url value="/delete_technic"/>" method="get">
+                    <td>
+                        <button class="button-delete" type="submit" name="technicDelete" value="${technic.id}">Удалить
+                        </button>
+                    </td>
+                </form>
             </tr>
         </c:forEach>
         </tbody>
