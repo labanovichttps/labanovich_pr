@@ -27,7 +27,7 @@
                 <div class="container-fields">
                     <div class="container-field">
                         <div class="field-text">Владелец</div>
-                        <select class="input" name="surrenderTecOwnerId">
+                        <select class="input" name="surrenderTecOwnerId" required>
                             <option hidden></option>
                             <c:forEach items="${employees}" var="empl">
                                 <option value="${empl.id}">${empl.name} ${empl.surname}</option>

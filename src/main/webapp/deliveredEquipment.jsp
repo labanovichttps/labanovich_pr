@@ -61,16 +61,18 @@
                     <c:if test="${empty tech.receiveDate}">
                         <form action="<c:url value="/receive_surrender_technic"/>" method="get">
                             <td>
-                                <button class="button-back" value="${tech.id}" onclick="return confirm('Are you sure you want to receive technic?')" name="reciveTs">Вернуть</button>
+                                <button class="button-back" value="${tech.id}" onclick="return confirm('Подтвердите состояние техники')" name="reciveTs">Вернуть</button>
                             </td>
                         </form>
                     </c:if>
-                    <form action="<c:url value="/EditSurrenderTechnicController"/>" method="get">
-                        <td>
-                            <input type="hidden" value="${tech.receiveDate}" name="tempDate">
-                            <button class="button-detail" value="${tech.id}" name="editTs">Изменить</button>
-                        </td>
-                    </form>
+                    <c:if test="${not empty tech.receiveDate}">
+                        <form action="<c:url value="/EditSurrenderTechnicController"/>" method="get">
+                            <td>
+                                <input type="hidden" value="${tech.receiveDate}" name="tempDate">
+                                <button class="button-detail" value="${tech.id}" name="editTs">Изменить</button>
+                            </td>
+                        </form>
+                    </c:if>
                 </tr>
             </c:forEach>
 
