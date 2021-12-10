@@ -27,7 +27,6 @@
 <c:set var="technics" value="${requestScope.technics}"/>
 
 <input type="text" id="search" placeholder="Поиск" onkeyup="tableSearch()">
-<button>Word</button>
 <button id="btnExport" onclick="fnExcelReport()" >Excel</button>
 <div class="main">
 
@@ -67,8 +66,12 @@
                             <td>
                                 <button class="button-back" value="${tech.id}" onclick="return confirm('Подтвердите состояние техники')" name="reciveTs">Вернуть</button>
                             </td>
+
                         </form>
                     </c:if>
+                    <td>
+                        <button class="button-word" value="${tech.id}" onclick="">Word</button>
+                    </td>
                     <c:if test="${not empty tech.receiveDate}">
                         <form action="<c:url value="/EditSurrenderTechnicController"/>" method="get">
                             <td>
@@ -91,7 +94,7 @@
             <th>User</th>
             <th>Technic</th>
             <th onclick="sortTableBid(3)" >Surrender date</th>
-            <th onclick="sortTableBid(4)" >Recieve date</th>
+            <th onclick="sortTableBid(4)" >Receive date</th>
         </tr>
         </thead>
 

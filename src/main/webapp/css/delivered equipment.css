@@ -120,3 +120,21 @@ body {
     color: #fff;
     transition-duration: 0.2s;
 }
+
+.button-word {
+    width: 120px;
+    height: 22px;
+    border: 1px solid darkblue;
+    color: darkblue;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 10px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.button-word:hover {
+    background-color: darkblue;
+    color: #fff;
+    transition-duration: 0.2s;
+}
