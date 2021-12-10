@@ -83,12 +83,11 @@
 
         <thead>
         <tr>
-            <th onclick="sortTableBid(0)" >№</th>
-            <th onclick="sortTableBid(1)" >Название техники </th>
-            <th onclick="sortTableBid(2)" >Производитель</th>
-            <th onclick="sortTableBid(3)" >Дата производства</th>
-            <th onclick="sortTableBid(4)" >Цена, $</th>
-            <th colspan="3">Действия</th>
+            <th onclick="sortTableBid(0)" >Id</th>
+            <th onclick="sortTableBid(1)" >Technic name</th>
+            <th onclick="sortTableBid(2)" >Producer</th>
+            <th onclick="sortTableBid(3)" >Produce date</th>
+            <th onclick="sortTableBid(4)" >Cost, $</th>
         </tr>
         </thead>
 
@@ -199,11 +198,12 @@
         var textRange; var j=0;
         tab = document.getElementById('info-tableExport'); // id of table
 
-        for(j = 1 ; j < tab.rows.length ; j++)
+        for(j = 0 ; j < tab.rows.length ; j++)
         {
             tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
 //tab_text=tab_text+"</tr>";
         }
+        tab_text=tab_text+'Equipment'
 
         tab_text=tab_text+"</table>";
         tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table

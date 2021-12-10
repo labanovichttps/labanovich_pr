@@ -195,7 +195,7 @@
             tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
 //tab_text=tab_text+"</tr>";
         }
-
+        tab_text=tab_text+'Users'
         tab_text=tab_text+"</table>";
         tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
         tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table

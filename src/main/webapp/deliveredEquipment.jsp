@@ -87,11 +87,11 @@
 
         <thead>
         <tr>
-            <th>ID сданной техники</th>
-            <th>Пользователь</th>
-            <th>Техника</th>
-            <th onclick="sortTableBid(3)" >Дата сдачи</th>
-            <th onclick="sortTableBid(4)" >Дата возврата</th>
+            <th>Id</th>
+            <th>User</th>
+            <th>Technic</th>
+            <th onclick="sortTableBid(3)" >Surrender date</th>
+            <th onclick="sortTableBid(4)" >Recieve date</th>
         </tr>
         </thead>
 
@@ -210,12 +210,12 @@
         var textRange; var j=0;
         tab = document.getElementById('info-tableExport'); // id of table
 
-        for(j = 1 ; j < tab.rows.length ; j++)
+        for(j = 0 ; j < tab.rows.length ; j++)
         {
             tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
 //tab_text=tab_text+"</tr>";
         }
-
+        tab_text=tab_text+'Delivered equipment'
         tab_text=tab_text+"</table>";
         tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
         tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
