@@ -27,6 +27,8 @@
 <button id="btnExport" onclick="fnExcelReport()" >Excel</button>
 <div class="main">
 
+
+
     <table class="table" id="info-table">
 
         <thead>
@@ -57,6 +59,37 @@
                     <td>
                         <button onclick="alert('YOU DELETE USER')" class="button-delete" value="${employee.id}" name="deleteUser">Удалить</button>
                     </td>
+                </form>
+            </tr>
+        </c:forEach>
+
+
+        </tbody>
+
+    </table>
+
+    <table class="table" id="info-tableExport" style="display:none">
+
+        <thead>
+        <tr>
+            <th onclick="sortTableBid(0)">Номер</th>
+            <th onclick="sortTableBid(1)">Имя</th>
+            <th onclick="sortTableBid(2)">Фамилия</th>
+            <th onclick="sortTableBid(3)">Должность</th>
+            <th onclick="sortTableBid(4)">Номер телефона</th>
+            <th colspan="3">Действия</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <c:forEach var="employee" items="${employees}">
+            <tr>
+                <td>${employee.id}</td>
+                <td>${employee.name}</td>
+                <td>${employee.surname}</td>
+                <td>${employee.position}</td>
+                <td>${employee.phoneNumber}</td>
+                <form action="<c:url value="/edit_employee"/>">
                 </form>
             </tr>
         </c:forEach>
@@ -156,7 +189,7 @@
     {
         var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
         var textRange; var j=0;
-        tab = document.getElementById('info-table'); // id of table
+        tab = document.getElementById('info-tableExport'); // id of table
 
         for(j = 1 ; j < tab.rows.length ; j++)
         {

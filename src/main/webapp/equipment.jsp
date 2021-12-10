@@ -26,7 +26,7 @@
     <p style="color: #F88092">${message}</p>
 </c:if>
 
-<input type="text" id="search" placeholder="Поиск" onkeyup="tableSearch()">
+<input type="text" placeholder="Поиск" id="search" onkeyup="tableSearch()">
 <button>Word</button>
 <button id="btnExport" onclick="fnExcelReport()" >Excel</button>
 <div class="main">
@@ -72,6 +72,35 @@
                         <button class="button-delete" type="submit" name="technicDelete" value="${technic.id}">Удалить
                         </button>
                     </td>
+                </form>
+            </tr>
+        </c:forEach>
+        </tbody>
+
+    </table>
+
+    <table class="table" id="info-tableExport" style="display:none">
+
+        <thead>
+        <tr>
+            <th onclick="sortTableBid(0)" >№</th>
+            <th onclick="sortTableBid(1)" >Название техники </th>
+            <th onclick="sortTableBid(2)" >Производитель</th>
+            <th onclick="sortTableBid(3)" >Дата производства</th>
+            <th onclick="sortTableBid(4)" >Цена, $</th>
+            <th colspan="3">Действия</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <c:forEach items="${technics}" var="technic">
+            <tr>
+                <td>${technic.id}</td>
+                <td>${technic.name}</td>
+                <td>${technic.producer}</td>
+                <td>${technic.produceDate}</td>
+                <td>${technic.cost}$</td>
+                <form action="<c:url value="/edit_technic"/>" method="get">
                 </form>
             </tr>
         </c:forEach>
@@ -168,7 +197,7 @@
     {
         var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
         var textRange; var j=0;
-        tab = document.getElementById('info-table'); // id of table
+        tab = document.getElementById('info-tableExport'); // id of table
 
         for(j = 1 ; j < tab.rows.length ; j++)
         {
@@ -194,7 +223,6 @@
         }
         else //other browser not tested on IE 11
             sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));
-
         return (sa);
     }
 

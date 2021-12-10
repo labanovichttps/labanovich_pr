@@ -83,7 +83,42 @@
         </tbody>
 
     </table>
+    <table class="table" id="info-tableExport" style="display:none" >
 
+        <thead>
+        <tr>
+            <th>ID сданной техники</th>
+            <th>Пользователь</th>
+            <th>Техника</th>
+            <th onclick="sortTableBid(3)" >Дата сдачи</th>
+            <th onclick="sortTableBid(4)" >Дата возврата</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <c:forEach items="${sdTech}" var="tech">
+            <tr>
+                <td>${tech.id}</td>
+                <td>
+                        ${employees.stream()
+                                .filter(empl-> empl.getId() == tech.userId)
+                                .findFirst()
+                                .get()}
+
+                </td>
+                <td>${technics.stream()
+                        .filter(technics -> technics.getId() == tech.technicId)
+                        .findFirst()
+                        .get()}
+                </td>
+                <td>${tech.surrenderDate}</td>
+                <td>${tech.receiveDate}</td>
+            </tr>
+        </c:forEach>
+
+        </tbody>
+
+    </table>
 </div>
 
 </body>
@@ -173,7 +208,7 @@
     {
         var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
         var textRange; var j=0;
-        tab = document.getElementById('info-table'); // id of table
+        tab = document.getElementById('info-tableExport'); // id of table
 
         for(j = 1 ; j < tab.rows.length ; j++)
         {
