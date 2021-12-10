@@ -29,7 +29,7 @@ public class DeleteEmployeeController extends HttpServlet {
             request.getRequestDispatcher("/users.jsp")
                     .forward(request, response);
         } else {
-            request.setAttribute("message", "USER NOT FOUND");
+            request.setAttribute("message", "USER CANNOT BE DELETED");
             request.getRequestDispatcher("/users.jsp")
                     .forward(request, response);
         }

@@ -29,7 +29,7 @@ public class DeleteSurrenderTechnic extends HttpServlet {
             request.getRequestDispatcher("/")
                     .forward(request, response);
         } else {
-            request.setAttribute("message", "TECHNIC NOT FOUND");
+            request.setAttribute("message", "TECHNIC CANNOT BE DELETE");
         }
     }
 

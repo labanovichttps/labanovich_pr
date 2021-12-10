@@ -29,7 +29,7 @@ public class DeleteTechnicController extends HttpServlet {
             request.getRequestDispatcher("/equipment.jsp")
                     .forward(request, response);
         } else {
-            request.setAttribute("message", "TECHNIC NOT FOUND");
+            request.setAttribute("message", "TECHNIC CANNOT BE DELETED");
             request.getRequestDispatcher("/equipment.jsp")
                     .forward(request, response);
         }
