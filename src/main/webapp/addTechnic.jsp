@@ -34,12 +34,12 @@
 
             <div class="unit">
                 <div class="unit-text">Дата производства</div>
-                <input type="date" name="tproduceDate" min="1970-12-10" max="2022-12-10" required>
+                <input type="date" name="tproduceDate" min="1970-12-10" max="2021-12-10" required>
             </div>
 
             <div class="unit">
                 <div class="unit-text">Срок гарантии</div>
-                <input type="date" name="tserviceDate" min="2022-12-10" max="2032-12-10" required>
+                <input type="date" name="tserviceDate" min="2021-12-10" max="2032-12-10" required>
             </div>
 
             <div class="unit">

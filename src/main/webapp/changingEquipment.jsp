@@ -38,13 +38,13 @@
 
             <div class="container-field">
                 <div class="field-text">Дата производства</div>
-                <input class="input" value="${technic.produceDate}" name="producerDateEdit" min="1970-12-10" max="2022-12-10" type="date" required
+                <input class="input" value="${technic.produceDate}" name="producerDateEdit" min="1970-12-10" max="2021-12-10" type="date" required
                        maxlength="50">
             </div>
 
             <div class="container-field">
                 <div class="field-text">Срок гарантии</div>
-                <input class="input" value="${technic.service_date}" name="serviceDateEdit" min="2022-12-10" max="2032-12-10" type="date" required
+                <input class="input" value="${technic.service_date}" name="serviceDateEdit" min="2021-12-10" max="2032-12-10" type="date" required
                        maxlength="50">
             </div>
 

@@ -72,12 +72,11 @@
 
         <thead>
         <tr>
-            <th onclick="sortTableBid(0)">Номер</th>
-            <th onclick="sortTableBid(1)">Имя</th>
-            <th onclick="sortTableBid(2)">Фамилия</th>
-            <th onclick="sortTableBid(3)">Должность</th>
-            <th onclick="sortTableBid(4)">Номер телефона</th>
-            <th colspan="3">Действия</th>
+            <th onclick="sortTableBid(0)">Id</th>
+            <th onclick="sortTableBid(1)">Name</th>
+            <th onclick="sortTableBid(2)">Surname</th>
+            <th onclick="sortTableBid(3)">Position</th>
+            <th onclick="sortTableBid(4)">Phone number</th>
         </tr>
         </thead>
 
@@ -191,7 +190,7 @@
         var textRange; var j=0;
         tab = document.getElementById('info-tableExport'); // id of table
 
-        for(j = 1 ; j < tab.rows.length ; j++)
+        for(j = 0 ; j < tab.rows.length ; j++)
         {
             tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
 //tab_text=tab_text+"</tr>";
