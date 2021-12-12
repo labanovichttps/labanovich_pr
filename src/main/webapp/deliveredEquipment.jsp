@@ -68,10 +68,9 @@
                             </td>
 
                         </form>
+
                     </c:if>
-                    <td>
-                        <button class="button-word" value="${tech.id}" onclick="">Word</button>
-                    </td>
+
                     <c:if test="${not empty tech.receiveDate}">
                         <form action="<c:url value="/EditSurrenderTechnicController"/>" method="get">
                             <td>
@@ -79,6 +78,11 @@
                                 <button class="button-detail" value="${tech.id}" name="editTs">Изменить</button>
                             </td>
                         </form>
+                        <td>
+                            <form action="<c:url value="/print_technic"/>" method="post">
+                                <button class="button-word" type="submit" name="idForPrint" value="${tech.id}">Word</button>
+                            </form>
+                        </td>
                     </c:if>
                 </tr>
             </c:forEach>
