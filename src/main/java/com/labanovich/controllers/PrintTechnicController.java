@@ -51,7 +51,7 @@ public class PrintTechnicController extends HttpServlet {
                 .findFirst()
                 .orElseThrow();
 
-        Path newFilePath = Paths.get("/Users/tsimafeilabanovich/Documents/Projects/Practic/labanovich_pr/src/main/resources/word/" + LocalTime.now() + ".txt");
+        Path newFilePath = Paths.get("/Users/tsimafeilabanovich/Documents/Projects/Practic/labanovich_pr/src/main/resources/word/" + LocalTime.now() + ".docx");
         Files.createFile(newFilePath);
         Files.writeString(newFilePath, "ТЕХНИКА С ID = " + technic + "  БЫЛА ВЫДАНА ПОЛЬЗОВАТЕЛЮ "
                                        + employee1 + " " + technic.getSurrenderDate() + " И БЫЛА ВОЗВРАЗЕНА " + technic.getReceiveDate() + " ЧИСЛА");

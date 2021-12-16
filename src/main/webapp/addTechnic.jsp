@@ -34,7 +34,7 @@
 
             <div class="unit">
                 <div class="unit-text">Дата производства</div>
-                <input type="date" name="tproduceDate" min="1970-12-11" max="2021-12-11" required>
+                <input type="date" id="prDate" name="tproduceDate" min="1970-12-11" required>
             </div>
 
             <div class="unit">
@@ -57,3 +57,7 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+    prDate.max = new Date().toISOString().split("T")[0];
+</script>

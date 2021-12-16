@@ -1,0 +1,3 @@
+ТЕХНИКА С ID = SurrenderTechnic(id=20, userId=2, technicId=1, surrenderDate=2021-12-08, receiveDate=2021-12-08)
+БЫЛА ВЫДАНА ПОЛЬЗОВАТЕЛЮ Employee(id=2, name=Labanovich, surname=Tsimafei, position=Programmer, phoneNumber=dasd+8924982374)
+2021-12-08 И БЫЛА ВОЗВРАЗЕНА 2021-12-08 ЧИСЛА
